@@ -1,0 +1,32 @@
+.Banner__container {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 800px;
+}
+
+.Banner__character {
+
+}
+
+.Banner__characterImg {
+  display: flex;
+  object-fit: contain;
+  width: 20rem;
+  position: relative;
+  top: 0;
+  left: 260px;
+}
+
+.Banner__welcome {
+  position: relative;
+  right: 360px;
+  top: 0;
+}
+.Banner__welcome h1 {
+  font-size: 3rem;
+}

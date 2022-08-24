@@ -1,3 +1,4 @@
+import requests from './api/requests';
 import './App.css';
 import Banner from './components/Banner';
 import Nav from './components/Nav';
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <Nav></Nav>
       <Banner></Banner>
-      <Row></Row>
+      <Row fetchUrl = {requests.fetchComics}/>
     </div>
   );
 }

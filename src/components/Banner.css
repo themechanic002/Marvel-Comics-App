@@ -1,10 +1,6 @@
 .Banner__container {
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 800px;
+  height: 30vw;
   padding: 0 12vw;
   margin-top: 200px;
 }

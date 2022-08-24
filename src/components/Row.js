@@ -14,7 +14,7 @@ const Row = ({ fetchUrl }) => {
   const fetchData = async () => {
     const res = await axios.get(fetchUrl);
     setData(res.data.data.results);
-    console.log(res);
+    console.log(data);
   };
 
 
@@ -31,7 +31,8 @@ const Row = ({ fetchUrl }) => {
             data.map(item => (
               <img
                 key={item.id}
-                src={`${item.thumbnail.path}`}
+                className={`row__poster`}
+                src={`${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}`}
                 alt={item.id}
               />
             ))

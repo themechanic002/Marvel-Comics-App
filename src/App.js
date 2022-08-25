@@ -9,7 +9,8 @@ function App() {
     <div className="App">
       <Nav></Nav>
       <Banner></Banner>
-      <Row fetchUrl = {requests.fetchComics}/>
+      <Row fetchUrl = {requests.fetchComics} id = "COMICS"/>
+      <Row fetchUrl = {requests.fetchCharacters} id = "CHARACTERS"/>
     </div>
   );
 }

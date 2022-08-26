@@ -3,7 +3,7 @@ import axios from '../api/axios'
 import './Row.css'
 
 
-const Row = ({ fetchUrl, id }) => {
+const Row = ({ fetchUrl, id, tag }) => {
 
   useEffect(() => {
     fetchData();
@@ -18,11 +18,11 @@ const Row = ({ fetchUrl, id }) => {
   };
 
 
-
+  console.log(data);
 
   return (
     <section className='row'>
-      <h2>title</h2>
+      <h2>{tag}</h2>
       <div className='slider'>
         <div className='slider__arrow-left' onClick={() => document.getElementById(id).scrollLeft -= window.innerWidth - 80}>
           <span className='arrow'>{"<"}</span>
@@ -39,7 +39,7 @@ const Row = ({ fetchUrl, id }) => {
                     alt={item.id}
                   />
                   <p key={`text-${item.id}`} className={`row__poster-desc`}>
-                    d
+                    {`${item.title}`}
                   </p>
                 </div>
               )

@@ -80,15 +80,15 @@ h2 {
 .row__poster {
   
   flex-direction: column;
-
-  max-height: 200px;
+  width: 10vw;
+  height: 15vw;
   margin-right: 10px;
   transition: transform 450ms;
 }
 
 .row__poster-image {
   object-fit: contain;
-  height: 100%;
+  width: 8vw;
   border-radius: 4px;
 }
 .row__poster-desc {
@@ -130,18 +130,13 @@ h2 {
   align-items: center;
 }
 @media screen and (min-width: 1200px) {
-  .row__poster {
-    max-height: 200px;
-    
-  }
+  
   .row__posterLarge {
     max-height: 360px;
   }
 }
 @media screen and (max-width: 768px) {
-  .row__poster {
-    max-height: 200px;
-  }
+  
   .row__posterLarge {
     max-height: 280px;
   }

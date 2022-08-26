@@ -13,8 +13,27 @@ const Row = ({ fetchUrl, id, tag }) => {
 
   const fetchData = async () => {
     const res = await axios.get(fetchUrl);
-    setData(res.data.data.results);
-    console.log(data);
+    const charactersArray = res.data.data.results;
+    var characters = [];
+
+    charactersArray.filter(char => 
+      char.events.available > 0
+    );
+
+    charactersArray.map((char) => {
+      if (char.events.available > 0) {
+        char.events.items.map((item) => {
+          if (item.name.includes('venger')) {
+            if(!characters.includes(char)){
+              characters.push(char);
+            }
+            return;
+          }
+        })
+      } else return;
+    });
+    setData(characters);
+
   };
 
 
@@ -30,19 +49,19 @@ const Row = ({ fetchUrl, id, tag }) => {
         <div id={id} className="row__posters">
           {
             data.map(item =>
-              (
-                <div key={item.id} className={`row__poster`}>
-                  <img
-                    key={`image-${item.id}`}
-                    className={`row__poster-image`}
-                    src={`${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}`}
-                    alt={item.id}
-                  />
-                  <p key={`text-${item.id}`} className={`row__poster-desc`}>
-                    {`${item.title}`}
-                  </p>
-                </div>
-              )
+            (
+              <div key={item.id} className={`row__poster`}>
+                <img
+                  key={`image-${item.id}`}
+                  className={`row__poster-image`}
+                  src={`${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}`}
+                  alt={item.id}
+                />
+                <p key={`text-${item.id}`} className={`row__poster-desc`}>
+                  {`${item.name}`}
+                </p>
+              </div>
+            )
             )
           }
         </div>
